@@ -1,26 +1,40 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Palette Sportway — ricavata dai mockup design/ */
+  --color-lake: #1e2735; /* scuro principale, sfondi hero/testi */
+  --color-graphite: #2f3a4b; /* reparto montagna */
+  --color-steel: #4b5a72; /* pulsanti secondari, slate dei mockup */
+  --color-hi: #8e9bb0; /* focus outline */
+  --color-pass: #d5dbe4; /* testo secondario su scuro */
+  --color-ice: #f3f4f6; /* sfondo corpo */
+  --color-accent: #ed1c24; /* rosso Sportway */
+  --color-mainstroke: #7d8ba0; /* testo outline footer */
+
+  --font-display: var(--font-display), sans-serif;
+  --font-sans: var(--font-sans), sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@utility dp {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 0.86;
+  letter-spacing: -0.015em;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), sans-serif;
+  background: var(--color-ice);
+  color: var(--color-lake);
+  overflow-x: clip;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-hi);
+  outline-offset: 3px;
 }
